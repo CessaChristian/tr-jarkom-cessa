@@ -1,0 +1,131 @@
+IP Awal	 : 192.168.59.0
+Gedung FTI 	: 64 Client		
+Gedung FKIK 	: 46 Client
+Gedung FPB 	: 40 Client
+Gedung FT	: 25 Client		
+==============================================================================
+
+PROSES HITUNGAN VLSM
+
+IP Awal	 : 192.168.59.0
+
+1. Gedung FTI: 64 Client
+
+host valid	: 2^7 - 2 = 128 - 2 = 126
+
+subnet mask	: 11111111.	11111111.	11111111.	11000000.
+		  255.		255.		255.		128.
+
+block subnet	: 256 - 128 = 128
+
+prefik		: /25
+
+Network ID			Range				Broadcast
+192.168.59.0		192.168.59.1 - 192.168.59.126		192.168.59.127
+192.168.59.128 => IP awal gedung FKIK
+
+
+2. Gedung FKIK: 46 Client
+
+host valid	: 2^6 - 2 = 64 - 2 = 62
+
+subnet mask	: 11111111.	11111111.	11111111.	11000000.
+		  255.		255.		255.		192.
+
+block subnet	: 256 - 192 = 64
+
+prefik		: /26
+
+Network ID			Range				Broadcast
+192.168.59.128		192.168.59.129 - 192.168.59.190		192.168.59.191
+192.168.59.192 => IP awal gedung FPB
+
+
+3. Gedung FPB: 40 Client
+
+host valid	: 2^6 - 2 = 64 - 2 = 62
+
+subnet mask	: 11111111.	11111111.	11111111.	10000000.
+		  255.		255.		255.		192.
+
+block subnet	: 256 - 192 = 64
+
+prefik		: /26
+
+Network ID			Range				Broadcast
+192.168.59.192		192.168.59.193 - 192.168.59.254		192.168.59.255
+192.168.60.0 => IP awal gedung FPB
+
+
+4. Gedung FT: 25 Client
+
+host valid	: 2^5 - 2 = 32 - 2 = 30
+
+subnet mask	: 11111111.	11111111.	11111111.	11100000.
+		  255.		255.		255.		224.
+
+block subnet	: 256 - 192 = 64
+
+prefik		: /26
+
+Network ID			Range				Broadcast
+192.168.60.0		192.168.60.1 - 192.168.60.30		192.168.60.31
+
+
+5. Gedung FTI - Gedung FKIK : Host 4
+
+host valid	: 2^3 - 2 = 8 - 2 = 6
+
+subnet mask	: 255.255.255.248
+
+block subnet	: 256 - 248 = 8
+
+prefik		: /29
+
+Network ID	: 192.168.60.32		  
+
+Range           : 192.168.60.33 - 192.168.60.38
+
+Broadcast       : 192.168.60.39
+
+192.168.70.40 >> IP awal gedung berikutnya
+
+
+6. Gedung FKIK - Gedung FPB : 4 host
+
+Host valid	: 2^3 - 2 = 8 - 2 = 6
+
+Subnet mask	: 255.255.255.248
+
+Block subnet	: 256 - 248 = 8
+
+Slash		: /29
+
+Network ID	: 192.168.60.40	  
+
+Range           : 192.168.60.41 - 192.168.60.46
+
+Broadcast       : 192.168.60.47
+
+192.168.70.48 >> IP awal gedung berikutnya
+
+7. Gedung FPB - Gedung FT : 4 host
+
+Host valid	: 2^3 - 2 = 8 - 2 = 6
+
+Subnet mask	: 255.255.255.248
+
+Block subnet	: 256 - 248 = 8
+
+Slash		: /29
+
+Network ID	: 192.168.60.48  
+
+Range           : 192.168.60.49 - 192.168.60.54
+
+Broadcast       : 192.168.60.55
+
+
+
+
+
